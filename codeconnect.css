@@ -323,5 +323,32 @@ body {
                 }
             }
         }
+
+        .tutorials-main-conatainer {
+            h6 {
+                padding: 1rem;
+            }
+            .tutorials-video-container {
+                display: flex;
+
+                gap: 1.8rem;
+
+                .video-tutorial {
+                    text-align: center;
+                    background-color: #171717;
+                    border-radius: 1rem;
+                    box-shadow: 4px 4px 6px 0px #42219c;
+
+                    iframe {
+                        border-radius: 1rem;
+                    }
+
+                    p {
+                        color: var(--content-ligth);
+                        padding: 1em 0;
+                    }
+                }
+            }
+        }
     }
 }
