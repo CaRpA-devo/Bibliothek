@@ -25,28 +25,29 @@ body {
 
     font-family: WorkSans;
 
+    /* Typescale */
     h1 {
-        font-size: 2.986rem;
+        font-size: 5.6125rem;
     }
 
     h2 {
-        font-size: 2.488rem;
+        font-size: 4.2062rem;
     }
 
     h3 {
-        font-size: 2.074rem;
+        font-size: 3.1563rem;
     }
 
     h4 {
-        font-size: 1.728rem;
+        font-size: 2.3687rem;
     }
 
     h5 {
-        font-size: 1.44rem;
+        font-size: 1.775rem;
     }
 
     h6 {
-        font-size: 1.2rem;
+        font-size: 1.3313rem;
     }
 
     p {
@@ -54,10 +55,15 @@ body {
     }
 
     small {
-        font-size: 0.833rem;
+        font-size: 0.75rem;
+    }
+
+    small-ligth {
+        font-size: 0.5625rem;
     }
 
     header {
+        /* nav-container */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -116,6 +122,7 @@ body {
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            background-attachment: scroll;
             height: 60vh;
             display: flex;
             justify-content: center;
@@ -128,7 +135,7 @@ body {
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    gap: 0.5em;
+                    gap: 0.25em;
                     color: var(--content-ligth);
                     text-shadow: 3px 2px 2px var(--bg-second-blue);
                 }
@@ -153,13 +160,167 @@ body {
                     }
                 }
             }
-            .content-einleitung {
+        }
+        /* content selbes styling für text abschnitte */
+        .content-einleitung {
+            color: var(--bg-dark-blue);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            margin-top: 4rem;
+
+            p {
+                max-width: 65vw;
+                line-height: 2rem;
+            }
+        }
+
+        /* bento-box als grid container
+         */
+
+        .bento-box-main-container,
+        .bg-container {
+            background-color: var(--bg-section-ligth);
+
+            margin-top: 4rem;
+            padding: 1rem;
+        }
+
+        /* einzelne boxen */
+
+        .bento-grid-container {
+            display: grid;
+            grid-template-columns: 10rem 20rem 15rem 10rem 10rem auto;
+            gap: 1rem;
+            grid-template-rows: repeat(2, 10rem);
+
+            grid-template-areas:
+                "header1 header2 header3 header4 . header5"
+                "main1 .  . main2 main3 main4 ";
+
+            /* allgemeines styling für alle grid-boxen */
+            .grid-boxes-style {
+                border-radius: 1rem;
+                overflow: hidden;
+                /* box-shadow: 2px 5px 12px 0px var(--bg-second-blue); */
+                box-shadow: 4px 4px 6px 0px #42219c;
+
+                img {
+                    border-radius: 1rem;
+                    transition: 300ms;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            /* grid-areas-boxen */
+            .fonts-area {
+                grid-area: header1;
+                img {
+                    width: 10em;
+                    height: 10em;
+                }
+            }
+            .Lernplattformen-area {
+                grid-area: header2;
+                background-color: #748cab;
+            }
+            .colors-area {
+                grid-area: header3;
+                grid-row: span 2;
+                img {
+                    width: 15em;
+                    height: 22em;
+                    grid-row: span 2;
+                }
+            }
+            .generators-area {
+                grid-area: header4;
+                grid-column: 4/6;
+
+                background-color: #3e5c76;
+            }
+            .Livecodings {
+                grid-area: header5;
+
+                background-color: #21639c;
+            }
+            .tools-area {
+                grid-area: main1;
+                grid-column: 1/3;
+
+                background-color: #21639c;
+            }
+            .pictures-area {
+                grid-area: main2;
+
+                background-color: #21639c;
+            }
+            .animatios-area {
+                grid-area: main3;
+
+                background-color: #21639c;
+            }
+            .courswikkki {
+                grid-area: main4;
+
+                background-color: #51616e;
+            }
+        }
+
+        /* das Courswikki in Cards und slidebar  */
+        /* container teilweise wie bento-box-main-container  */
+        .courswikki-container {
+            padding: 1rem;
+            text-align: start;
+            h6 {
                 color: var(--bg-dark-blue);
+            }
+            /* container für alle cards  */
+            .cards-main-container {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                gap: 2rem;
+                justify-content: space-between;
+                gap: 1.5rem;
+
+                .card-list-container-wikki {
+                    display: flex;
+
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: column;
+
+                    padding: 1rem;
+                    background-color: var(--bg-second-blue);
+                    min-width: 9rem;
+                    min-height: 10rem;
+                    border-radius: 1rem;
+                    margin-top: 1rem;
+                    cursor: pointer;
+                    box-shadow: 4px 4px 6px 0px #42219c;
+                    transition: 400ms ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        box-shadow: inset 0px 0px 6px 4px #42219c;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: var(--content-ligth);
+                    }
+                    ul {
+                        padding-top: 1rem;
+                        padding-left: 1em;
+                        li {
+                            font-size: 0.75rem;
+                            padding-bottom: 0.5em;
+                        }
+                    }
+                }
             }
         }
     }
