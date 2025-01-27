@@ -436,14 +436,14 @@ body {
                                 margin-bottom: 0.5rem;
                                 border-radius: 1em;
 
-                                color: var(--bg-second-blue);
+                                color: var(--accent-blue);
 
                                 box-shadow: inset 2px 2px 14px 4px
                                     var(--bg-second-blue);
                                 transition: 0.4s ease;
                                 &:hover {
                                     box-shadow: inset 2px 2px 14px 8px #42219c;
-                                    color: #42219c;
+                                    color: var(--content-ligth);
                                 }
                             }
                         }
@@ -464,15 +464,45 @@ body {
 
     /* bibliothek links */
     .link-section-main-container {
-        .fonts-links {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center;
+        align-items: center; */
+        gap: 3rem;
+        flex-wrap: wrap;
+
+        .links-alge-style {
+            background-color: var(--bg-second-blue);
             padding: 1rem;
+
+            max-width: auto;
+            border-radius: 1rem;
+            box-shadow: 4px 4px 6px 0px var(--shadow-purple);
             .list-container-libary {
-                color: var(--bg-second-blue);
+                color: var(--content-ligth);
                 list-style: none;
                 display: flex;
+                flex-wrap: wrap;
+                text-decoration: none;
                 gap: 1rem;
-                .link-libary {
-                    .img.libary {
+
+                .links-libary {
+                    display: flex;
+                    padding: 0.5rem 2rem;
+                    gap: 1rem;
+                    text-decoration: none;
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                    margin-bottom: 0.5rem;
+                    border-radius: 1em;
+                    background-color: var(--bg-second-blue);
+                    color: var(--accent-blue);
+
+                    box-shadow: 4px 4px 6px 0px var(--shadow-purple);
+                    transition: 0.4s ease;
+                    &:hover {
+                        box-shadow: inset 2px 2px 14px 8px #42219c;
+                        color: var(--content-ligth);
                     }
                 }
             }
