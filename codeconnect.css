@@ -194,22 +194,34 @@ body {
 
         .bento-grid-container {
             display: grid;
-            grid-template-columns: 10rem 15rem 15rem 10rem 10rem auto;
+            grid-template-columns: auto-fill;
             gap: 1rem;
+            background-color: var(--bg-dark-blue);
+            padding: 1rem;
+            border-radius: 1rem;
             grid-template-rows: repeat(2, 10rem);
             grid-template-areas:
-                "header1 header2 header3 header4 . header5"
-                "main1 .  . main2 main3 main4 ";
+                "header1  header2 header3 header4 header5 header6 header7 header8"
+                "main1 main7 . main2 main3 main4 main5 main6 ";
 
             /* allgemeines styling für alle grid-boxen */
             .grid-boxes-style {
                 border-radius: 1rem;
                 overflow: hidden;
-                /* box-shadow: 2px 5px 12px 0px var(--bg-second-blue); */
-                box-shadow: 4px 4px 6px 0px #42219c;
+                box-shadow: 4px 4px 6px 0px var(--shadow-purple);
                 background-position: center;
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: contain;
+
+                transition: 0.4s ease;
+
+                &:hover {
+                    transform: scale(0.8);
+                    box-shadow: inset 2px 2px 14px 8px var(--shadow-purple);
+                }
+                a {
+                    padding: 10rem;
+                }
             }
 
             /* grid-areas-boxen */
@@ -229,18 +241,17 @@ body {
             }
             .pictures-area {
                 grid-area: header4;
-                grid-column: 4/6;
+                background-image: url(src/pictures/Bento-box/Pictures-main160x160.png);
             }
-            .Livecodings {
+            .platforms-area {
                 grid-area: header5;
-
-                background-color: #21639c;
+                grid-column: 5/7;
+                background-image: url(src/pictures/Bento-box/platforms240x160.png);
             }
             .tools-area {
                 grid-area: main1;
-                grid-column: 1/3;
 
-                background-color: #21639c;
+                background-image: url(src/pictures/Bento-box/tools160x160.png);
             }
             .generators-area {
                 grid-area: main2;
@@ -248,176 +259,220 @@ body {
             }
             .animatios-area {
                 grid-area: main3;
-
-                background-color: #21639c;
+                background-image: url(src/pictures/Bento-box/animations.png);
             }
-            .courswikkki {
+            .lerning-area {
                 grid-area: main4;
-
-                background-color: #51616e;
+                background-image: url(src/pictures/Bento-box/learning160x160.png);
+            }
+            .frames-area {
+                grid-area: header7;
+                grid-column: 7/9;
+                background-image: url(src/pictures/Bento-box/frameworks240x160.png);
+            }
+            .docs-area {
+                grid-area: main5;
+                background-image: url(src/pictures/Bento-box/docs160x160.png);
+            }
+            .icons-area {
+                grid-area: main6;
+                background-image: url(src/pictures/Bento-box/icons160x160.png);
+            }
+            .wikki-area {
+                grid-area: main7;
+                background-image: url(src/pictures/Bento-box/icons160x160.png);
             }
         }
-
-        /* das Courswikki in Cards und slidebar  */
-        /* container teilweise wie bento-box-main-container  */
-        .courswikki-container {
-            padding: 1rem;
-            text-align: start;
-            h6 {
-                color: var(--bg-dark-blue);
-            }
-            /* container für alle cards  */
-            .cards-main-container {
-                display: flex;
-                justify-content: space-between;
-                gap: 1.5rem;
-
-                .card-list-container-wikki {
-                    display: flex;
-
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    flex-direction: column;
-
-                    padding: 1rem;
-                    background-color: var(--bg-second-blue);
-                    min-width: 9rem;
-                    min-height: 10rem;
-                    border-radius: 1rem;
-                    margin-top: 1rem;
-                    cursor: pointer;
-                    box-shadow: 4px 4px 6px 0px var(--shadow-purple);
-                    transition: 400ms ease;
+        @media (max-width: 768px) {
+            .bento-grid-container {
+                overflow: hidden;
+                .grid-boxes-style {
+                    overflow: hidden;
+                    transition: 0.4s ease;
 
                     &:hover {
-                        transform: scale(1.1);
-                        box-shadow: inset 0px 0px 6px 4px var(--shadow-purple);
-                    }
-
-                    a {
-                        text-decoration: none;
-                        color: var(--content-ligth);
-                    }
-                    ul {
-                        padding-top: 1rem;
-                        padding-left: 1em;
-                        li {
-                            font-size: 0.75rem;
-                            padding-bottom: 0.5em;
-                        }
+                        transform: scale(1.2);
+                        box-shadow: inset 2px 2px 14px 8px var(--shadow-purple);
                     }
                 }
             }
         }
+    }
 
-        /* tutorials section */
+    /* das Courswikki in Cards und slidebar  */
+    /* container teilweise wie bento-box-main-container  */
+    .courswikki-container {
+        padding: 1rem;
+        text-align: start;
+        h6 {
+            color: var(--bg-dark-blue);
+        }
+        /* container für alle cards  */
+        .cards-main-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
 
-        .tutorials-main-conatainer {
-            h6 {
-                color: var(--bg-second-blue);
-            }
-
-            .tutorials-swiper-conatainer {
+            .card-list-container-wikki {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 1rem;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
 
-                background-color: var(--bg-section-ligth);
+                padding: 1rem;
+                background-color: var(--bg-second-blue);
+                min-width: 9rem;
+                min-height: 10rem;
+                border-radius: 1rem;
+                margin-top: 1rem;
+                cursor: pointer;
+                box-shadow: 4px 4px 6px 0px var(--shadow-purple);
+                transition: 400ms ease;
 
-                .swiper {
-                    .slider-wrapper {
-                        overflow: hidden;
-                        max-width: 75rem;
-                        margin: 0px 70px 55px;
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: inset 0px 0px 6px 4px var(--shadow-purple);
+                }
 
-                        padding: 0.5rem;
+                a {
+                    text-decoration: none;
+                    color: var(--content-ligth);
+                }
+                ul {
+                    padding-top: 1rem;
+                    padding-left: 1em;
+                    li {
+                        font-size: 0.75rem;
+                        padding-bottom: 0.5em;
+                    }
+                }
+            }
+        }
+    }
 
-                        /* styling für die punkte */
-                        .swiper-pagination-bullet {
-                            background-color: var(--shadow-purple);
-                            height: 0.8125rem;
-                            width: 0.8125rem;
-                            opacity: 0.5;
+    /* tutorials section */
+
+    .tutorials-main-conatainer {
+        h6 {
+            color: var(--bg-second-blue);
+        }
+        /* swiper container styling */
+        .tutorials-swiper-conatainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            background-color: var(--bg-section-ligth);
+
+            .swiper {
+                .slider-wrapper {
+                    overflow: hidden;
+                    max-width: 75rem;
+                    margin: 0px 70px 55px;
+
+                    padding: 0.5rem;
+
+                    /* styling für die punkte */
+                    .swiper-pagination-bullet {
+                        background-color: var(--shadow-purple);
+                        height: 0.8125rem;
+                        width: 0.8125rem;
+                        opacity: 0.5;
+                    }
+
+                    /* styling für die punkte */
+                    .swiper-pagination-bullet-active {
+                        opacity: 1;
+                    }
+                    .swiper-slider-button {
+                        color: var(--shadow-purple);
+                        margin-top: -3.125rem;
+                        transition: 0.4s ease;
+
+                        &:hover {
+                            transform: scale(1.2);
+                            color: #4c18db;
                         }
+                    }
+                    .swiper-wrapper {
+                        padding: 1rem 0;
+                        /* die car wo das Video drinnen ist */
+                        .card-item {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                            border-radius: 2rem;
+                            padding: 0.5rem;
 
-                        /* styling für die punkte */
-                        .swiper-pagination-bullet-active {
-                            opacity: 1;
-                        }
-                        .swiper-slider-button {
-                            color: var(--shadow-purple);
-                            margin-top: -3.125rem;
+                            background-color: var(--bg-dark-blue);
+                            /* backdrop-filter: blur (30px); ist für background image gut*/
+                            user-select: none;
+                            box-shadow: 4px 4px 6px 0px var(--shadow-purple);
                             transition: 0.4s ease;
-
                             &:hover {
-                                transform: scale(1.2);
-                                color: #4c18db;
+                                box-shadow: inset 0px 0px 6px 4px #4c18db;
                             }
-                        }
-                        .swiper-wrapper {
-                            padding: 1rem 0;
-                            /* die car wo das Video drinnen ist */
-                            .card-item {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                flex-direction: column;
-                                border-radius: 2rem;
-                                padding: 0.5rem;
+                            /* styling und eigenschaften für das video an sich */
+                            .tutorial-video {
+                                border-radius: 1.5rem;
+                                margin-bottom: 1rem;
+                            }
 
-                                background-color: var(--bg-dark-blue);
-                                /* backdrop-filter: blur (30px); ist für background image gut*/
-                                user-select: none;
-                                box-shadow: 4px 4px 6px 0px var(--shadow-purple);
+                            .tutorial-info {
+                                color: var(--bg-second-blue);
+                                font-size: 1rem;
+                                color: var(--content-ligth);
+                                font-weight: 600;
+                                padding-bottom: 0.5rem;
+                            }
+
+                            .tutorial-button {
+                                padding: 0.5rem 1rem;
+                                text-decoration: none;
+                                font-size: 0.75rem;
+                                font-weight: 900;
+                                margin-bottom: 0.5rem;
+                                border-radius: 1em;
+
+                                color: var(--bg-second-blue);
+
+                                box-shadow: inset 2px 2px 14px 4px
+                                    var(--bg-second-blue);
                                 transition: 0.4s ease;
                                 &:hover {
-                                    box-shadow: inset 0px 0px 6px 4px #4c18db;
-                                }
-                                /* styling und eigenschaften für das video an sich */
-                                .tutorial-video {
-                                    border-radius: 1.5rem;
-                                    margin-bottom: 1rem;
-                                }
-
-                                .tutorial-info {
-                                    color: var(--bg-second-blue);
-                                    font-size: 1rem;
-                                    color: var(--content-ligth);
-                                    font-weight: 600;
-                                    padding-bottom: 0.5rem;
-                                }
-
-                                .tutorial-button {
-                                    padding: 0.5rem 1rem;
-                                    text-decoration: none;
-                                    font-size: 0.75rem;
-                                    font-weight: 900;
-                                    margin-bottom: 0.5rem;
-                                    border-radius: 1em;
-
-                                    color: var(--bg-second-blue);
-
-                                    box-shadow: inset 2px 2px 14px 4px
-                                        var(--bg-second-blue);
-                                    transition: 0.4s ease;
-                                    &:hover {
-                                        box-shadow: inset 2px 2px 14px 8px
-                                            #42219c;
-                                        color: #42219c;
-                                    }
+                                    box-shadow: inset 2px 2px 14px 8px #42219c;
+                                    color: #42219c;
                                 }
                             }
                         }
                     }
                 }
-                @media (max-width: 768px) {
-                    .slider-wrapper {
-                        margin: 0 0.625rem 2.5rem;
+            }
+            @media (max-width: 768px) {
+                .slider-wrapper {
+                    margin: 0 0.625rem 2.5rem;
 
-                        .swiper-slider-button {
-                            display: none;
-                        }
+                    .swiper-slider-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    /* bibliothek links */
+    .link-section-main-container {
+        .fonts-links {
+            padding: 1rem;
+            .list-container-libary {
+                color: var(--bg-second-blue);
+                list-style: none;
+                display: flex;
+                gap: 1rem;
+                .link-libary {
+                    .img.libary {
                     }
                 }
             }
