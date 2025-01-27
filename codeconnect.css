@@ -12,6 +12,7 @@
     --content-ligth: #f5f6f8;
     --bg-ligth: #fafafa;
     --bg-section-ligth: #f6f6f6;
+    --shadow-purple: #42219c;
 }
 
 @font-face {
@@ -300,12 +301,12 @@ body {
                     border-radius: 1rem;
                     margin-top: 1rem;
                     cursor: pointer;
-                    box-shadow: 4px 4px 6px 0px #42219c;
+                    box-shadow: 4px 4px 6px 0px var(--shadow-purple);
                     transition: 400ms ease;
 
                     &:hover {
                         transform: scale(1.1);
-                        box-shadow: inset 0px 0px 6px 4px #42219c;
+                        box-shadow: inset 0px 0px 6px 4px var(--shadow-purple);
                     }
 
                     a {
@@ -325,28 +326,113 @@ body {
         }
 
         /* tutorials section */
+
         .tutorials-main-conatainer {
             h6 {
-                padding: 1rem;
+                color: var(--bg-second-blue);
             }
-            .tutorials-video-container {
+
+            .tutorials-swiper-conatainer {
                 display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
 
-                gap: 1.8rem;
+                background-color: var(--bg-section-ligth);
 
-                .video-tutorial {
-                    text-align: center;
-                    background-color: #171717;
-                    border-radius: 1rem;
-                    box-shadow: 4px 4px 6px 0px #42219c;
+                .swiper {
+                    .slider-wrapper {
+                        overflow: hidden;
+                        max-width: 75rem;
+                        margin: 0px 70px 55px;
 
-                    iframe {
-                        border-radius: 1rem;
+                        padding: 0.5rem;
+
+                        /* styling für die punkte */
+                        .swiper-pagination-bullet {
+                            background-color: var(--shadow-purple);
+                            height: 0.8125rem;
+                            width: 0.8125rem;
+                            opacity: 0.5;
+                        }
+
+                        /* styling für die punkte */
+                        .swiper-pagination-bullet-active {
+                            opacity: 1;
+                        }
+                        .swiper-slider-button {
+                            color: var(--shadow-purple);
+                            margin-top: -3.125rem;
+                            transition: 0.4s ease;
+
+                            &:hover {
+                                transform: scale(1.2);
+                                color: #4c18db;
+                            }
+                        }
+                        .swiper-wrapper {
+                            padding: 1rem 0;
+                            /* die car wo das Video drinnen ist */
+                            .card-item {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                border-radius: 2rem;
+                                padding: 0.5rem;
+
+                                background-color: var(--bg-dark-blue);
+                                /* backdrop-filter: blur (30px); ist für background image gut*/
+                                user-select: none;
+                                box-shadow: 4px 4px 6px 0px var(--shadow-purple);
+                                transition: 0.4s ease;
+                                &:hover {
+                                    box-shadow: inset 0px 0px 6px 4px #4c18db;
+                                }
+                                /* styling und eigenschaften für das video an sich */
+                                .tutorial-video {
+                                    border-radius: 1.5rem;
+                                    margin-bottom: 1rem;
+                                }
+
+                                .tutorial-info {
+                                    color: var(--bg-second-blue);
+                                    font-size: 1rem;
+                                    color: var(--content-ligth);
+                                    font-weight: 600;
+                                    padding-bottom: 0.5rem;
+                                }
+
+                                .tutorial-button {
+                                    padding: 0.5rem 1rem;
+                                    text-decoration: none;
+                                    font-size: 0.75rem;
+                                    font-weight: 900;
+                                    margin-bottom: 0.5rem;
+                                    border-radius: 1em;
+
+                                    color: var(--bg-second-blue);
+
+                                    box-shadow: inset 2px 2px 14px 4px
+                                        var(--bg-second-blue);
+                                    transition: 0.4s ease;
+                                    &:hover {
+                                        box-shadow: inset 2px 2px 14px 8px
+                                            #42219c;
+                                        color: #42219c;
+                                    }
+                                }
+                            }
+                        }
                     }
+                }
+                @media (max-width: 768px) {
+                    .slider-wrapper {
+                        margin: 0 0.625rem 2.5rem;
 
-                    p {
-                        color: var(--content-ligth);
-                        padding: 1em 0;
+                        .swiper-slider-button {
+                            display: none;
+                        }
                     }
                 }
             }
