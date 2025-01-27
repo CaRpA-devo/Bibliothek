@@ -194,10 +194,9 @@ body {
 
         .bento-grid-container {
             display: grid;
-            grid-template-columns: 10rem 20rem 15rem 10rem 10rem auto;
+            grid-template-columns: 10rem 15rem 15rem 10rem 10rem auto;
             gap: 1rem;
             grid-template-rows: repeat(2, 10rem);
-
             grid-template-areas:
                 "header1 header2 header3 header4 . header5"
                 "main1 .  . main2 main3 main4 ";
@@ -208,42 +207,29 @@ body {
                 overflow: hidden;
                 /* box-shadow: 2px 5px 12px 0px var(--bg-second-blue); */
                 box-shadow: 4px 4px 6px 0px #42219c;
-
-                img {
-                    border-radius: 1rem;
-                    transition: 300ms;
-                    &:hover {
-                        transform: scale(1.1);
-                    }
-                }
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
 
             /* grid-areas-boxen */
             .fonts-area {
                 grid-area: header1;
-                img {
-                    width: 10em;
-                    height: 10em;
-                }
+                background-image: url(src/pictures/Bento-box/Fonts-main160x160.png);
             }
             .Lernplattformen-area {
                 grid-area: header2;
-                background-color: #748cab;
+
+                background-image: url(src/pictures/Bento-box/turorials.png);
             }
             .colors-area {
                 grid-area: header3;
                 grid-row: span 2;
-                img {
-                    width: 15em;
-                    height: 22em;
-                    grid-row: span 2;
-                }
+                background-image: url(src/pictures/Bento-box/Colors-main.png);
             }
-            .generators-area {
+            .pictures-area {
                 grid-area: header4;
                 grid-column: 4/6;
-
-                background-color: #3e5c76;
             }
             .Livecodings {
                 grid-area: header5;
@@ -256,10 +242,9 @@ body {
 
                 background-color: #21639c;
             }
-            .pictures-area {
+            .generators-area {
                 grid-area: main2;
-
-                background-color: #21639c;
+                background-image: url(src/pictures/Bento-box/generators.png);
             }
             .animatios-area {
                 grid-area: main3;
