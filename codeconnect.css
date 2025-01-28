@@ -106,6 +106,7 @@ body {
                     bottom: -0.6rem;
                     width: 0;
                     height: 0.125rem;
+
                     background-color: var(--content-ligth);
                     transition: width 0.8s ease-in-out;
                 }
@@ -200,6 +201,7 @@ body {
             padding: 1rem;
             border-radius: 1rem;
             grid-template-rows: repeat(2, 10rem);
+            box-shadow: 4px 4px 6px 0px var(--shadow-purple);
             grid-template-areas:
                 "header1  header2 header3 header4 header5 header6 header7 header8"
                 "main1 main7 . main2 main3 main4 main5 main6 ";
@@ -414,7 +416,9 @@ body {
                             &:hover {
                                 box-shadow: inset 0px 0px 6px 4px #4c18db;
                             }
+
                             /* styling und eigenschaften für das video an sich */
+
                             .tutorial-video {
                                 border-radius: 1.5rem;
                                 margin-bottom: 1rem;
@@ -506,6 +510,96 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    /* footerbereich */
+
+    footer {
+        margin-top: 2rem;
+        padding: 2rem;
+
+        box-shadow: 2px 2px 10px 4px #42219c;
+        background-color: var(--bg-dark-blue);
+        text-align: center;
+
+        .content-container-for-cards {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1rem;
+            .contact-container {
+                display: flex;
+                text-align: start;
+                gap: 1rem;
+                flex-direction: column;
+
+                h6,
+                label {
+                    font-size: 0.85rem;
+                }
+
+                small,
+                a {
+                    color: var(--accent-blue);
+                    cursor: pointer;
+                    &:hover {
+                        color: #42219c;
+                    }
+                }
+            }
+
+            .form-styling-container,
+            .message-styling-container {
+                input,
+                textarea,
+                button {
+                    background-color: var(--bg-second-blue);
+                    border: none;
+                    padding: 0.5rem;
+                    border-radius: 1rem;
+                    color: var(--accent-blue);
+                    outline: none;
+                    box-shadow: 4px 4px 6px 0px var(--shadow-purple);
+
+                    &:focus {
+                        outline: auto;
+                        outline-color: #42219c;
+                        box-shadow: inset 2px 2px 14px 8px #42219c;
+                        color: var(--content-ligth);
+                    }
+                }
+            }
+        }
+
+        .copyrigth {
+            color: #f5f6f85d;
+            font-size: 0.85rem;
+        }
+    }
+
+    /* button zum starpunkt zurück  */
+    .scroll-button {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        position: sticky;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 3.125rem;
+        text-decoration: none;
+        margin-left: auto;
+        padding: 0.625rem 1.25rem;
+        background-color: #42219c6c;
+        z-index: 1000;
+        border: none;
+        border-radius: 3.125rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        &:hover {
+            box-shadow: inset 2px 2px 14px 8px #42219c;
+            background-color: var(--bg-section-ligth);
         }
     }
 }
